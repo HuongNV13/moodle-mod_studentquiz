@@ -97,7 +97,5 @@ echo $OUTPUT->header();
 // Render view.
 echo $renderer->render_overview($view);
 
-$PAGE->requires->js_init_code($renderer->render_bar_javascript_snippet());
-
 echo $OUTPUT->footer();
 
