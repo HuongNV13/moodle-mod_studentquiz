@@ -961,9 +961,10 @@ define(['jquery', 'core/str', 'core/ajax', 'core/modal_factory', 'core/templates
                                 type: ModalFactory.types.DEFAULT,
                                 title: self.string.deletecomment,
                                 body: self.string.confirmdeletecomment,
-                                footer: '<button type="button" data-action="yes" title="' +
+                                footer: '<button class="btn btn-primary" type="button" data-action="yes" title="' +
                                     self.string.deletecomment + '">' + self.string.deletetext + '</button>' +
-                                    '<button type="button" data-action="no" title="' + self.string.cancel + '">' +
+                                    '<button class="btn btn-secondary" type="button" data-action="no" title="' +
+                                    self.string.cancel + '">' +
                                     self.string.cancel + '</button>'
                             }).done(function(modal) {
                                 // Save modal for later.
