@@ -115,7 +115,7 @@ class container {
         $this->storedcomments = null;
         $this->user = $user === null ? clone $USER : $user;
         $this->course = clone $COURSE;
-        $this->ismoderator = has_capability('mod/studentquiz:manage', $context);
+        $this->ismoderator = has_capability('mod/studentquiz:previewothers', $context);
         $this->canviewdeleted = $this->ismoderator;
     }
 

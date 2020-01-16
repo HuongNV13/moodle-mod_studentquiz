@@ -547,7 +547,7 @@ function xmldb_studentquiz_upgrade($oldversion) {
         upgrade_mod_savepoint(true, 2019071700, 'studentquiz');
     }
 
-    if ($oldversion < 2019113000) {
+    if ($oldversion < 2020011304) {
 
         $table = new xmldb_table('studentquiz_comment');
         $field = new xmldb_field('parentid', XMLDB_TYPE_INTEGER, '10', null, true, null, 0, 'comment');
@@ -571,16 +571,13 @@ function xmldb_studentquiz_upgrade($oldversion) {
             $dbman->add_field($table, $field);
         }
 
-        upgrade_mod_savepoint(true, 2019113000, 'studentquiz');
-    }
-
-    if ($oldversion < 2020011300) {
         $table = new xmldb_table('studentquiz');
         $field = new xmldb_field('commentdeletionperiod', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, null, '10', 'publishnewquestion');
         if (!$dbman->field_exists($table, $field)) {
             $dbman->add_field($table, $field);
         }
-        upgrade_mod_savepoint(true, 2020011300, 'studentquiz');
+
+        upgrade_mod_savepoint(true, 2020011304, 'studentquiz');
     }
     return true;
 }
